@@ -40,7 +40,7 @@ cd Sensor_Graphc_Visualization
 ### 2. Run the Application
 Run the application using Python:
 ```bash
-python app.py
+python3 ctk.py
 ```
 
 ## Usage
