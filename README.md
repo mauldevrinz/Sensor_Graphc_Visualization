@@ -1,108 +1,82 @@
-![alt text](https://github.com/mauldevrinz/Sensor_Graphc_Visualization/blob/main/GUI_VISUALIZATION.png)
-# Voice Recorder and Translator with AI Training for ESP32
+# Sensor Signal Processing and Visualization Tool
 
-This project demonstrates how to build a PyQt6 application for voice recording and automatic translation.
+This project demonstrates a Python-based tool for visualizing, filtering, and analyzing sensor signals using a custom GUI built with `customtkinter` and Matplotlib. The application provides dynamic noise addition, signal filtering, and Discrete Fourier Transform (DFT) analysis.
+
+![alt text](https://github.com/mauldevrinz/Sensor_Graphc_Visualization/blob/main/GUI_VISUALIZATION.png)
 
 ## Authors
-1. Andik Putra Nazwana (2042231010)
-2. Andre Mahesa Bagaskara (2042231012)
-3. Akhmad Maulvin Nazir Zakaria (2042231028)
-4. Dwi Oktavianto Wahyu Nugroho (Supervisor)
+1. **Akhmad Maulvin Nazir Zakaria** (2042231028)
+2. **Dwi Oktavianto Wahyu Nugroho** (Supervisor)
 
-Teknik Instrumentasi - Institut Teknologi Sepuluh Nopember
+### Teknik Instrumentasi - Institut Teknologi Sepuluh Nopember
 
 ## Features
 
-1. **Voice Recording**: Record audio input using a simple and intuitive GUI.
-2. **Automatic Translation**: Translate recorded audio into a target language.
-3. **Database Upload**: Store recorded and translated data into a MySQL database.
-4. **Edge Impulse Integration**: Upload audio data to Edge Impulse for training deep learning models.
+1. **Signal Visualization**: Graphical display of sensor signals from various models, including noise-affected signals.
+2. **Dynamic Noise Addition**: Adjustable amplitude and frequency sliders for generating and adding noise to sensor signals.
+3. **Signal Filtering**:
+   - Low Pass Filter
+   - Moving Average Filter
+4. **Fourier Analysis**: Perform and visualize the Discrete Fourier Transform (DFT) on both raw and filtered signals.
+5. **Sensor Models**: Predefined mathematical models for gas, smoke, flame, voltage, and infrared signals.
 
 ## Requirements
 
 ### Software
-- Python 3.8+
-- PyQt6
-- Edge Impulse CLI
-- MySQL Server
+- Python 3
+
+### Libraries
+Install the required libraries using pip:
+```bash
+pip install customtkinter matplotlib numpy scipy
+```
 
 ## Installation
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/mauldevrinz/TUGAS-SPS-NO.2-KELAS-3B
-cd pyqt6-voice-ai
+git clone https://github.com/mauldevrinz/Sensor_Graphc_Visualization.git
+cd Sensor_Graphc_Visualization
 ```
 
-### 2. Install Python Dependencies
+### 2. Run the Application
+Run the application using Python:
 ```bash
-pip install PyQt6 pyaudio mysql-connector-python edge-impulse-cli googletrans==4.0.0-rc1
-```
-
-### 3. Set Up MySQL Database
-Create a MySQL database and table to store the recordings and translations:
-```sql
-CREATE DATABASE voice_ai;
-USE voice_ai;
-
-CREATE TABLE recordings (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    filename VARCHAR(255),
-    translation TEXT,
-    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
-);
-```
-
-### 4. Configure Edge Impulse
-Install the Edge Impulse CLI and log in:
-```bash
-npm install -g edge-impulse-cli
-edge-impulse-login
+python app.py
 ```
 
 ## Usage
 
-### 1. Run the PyQt6 Application
-Start the GUI application:
-```bash
-python main.py
-```
+### GUI Layout
+- **Sensor Selection**: Use the radio buttons to select the desired sensor signal model.
+- **Control Panel**: Adjust noise amplitude and frequency using the sliders.
+- **Signal Display**: View the original, noise-affected, and filtered signals in separate plots.
+- **Filter Buttons**: Apply Low Pass or Moving Average filters to the noisy signal.
+- **Fourier Analysis**: Perform DFT on raw or filtered signals and visualize the frequency domain data.
 
-### 2. Record and Translate
-- Use the GUI to record audio.
-- Automatically translate the audio after recording.
+### Sensor Models
+1. **Gas Sensor**: Simulates a gas sensor signal.
+2. **Smoke Sensor**: Generates a smoke sensor signal.
+3. **Flame Sensor**: Represents flame detection signal.
+4. **Voltage Sensor**: Simulates AC voltage waveform.
+5. **Infrared Sensor**: Models an IR sensor signal.
 
-### 3. Upload to MySQL
-- Save the recordings and translations to the MySQL database using the GUI.
+## Example Screenshots
+### Main GUI
+![GUI Screenshot](https://github.com/mauldevrinz/Sensor_Graphc_Visualization/blob/main/GUI_VISUALIZATION.png)
 
-### 4. Upload to Edge Impulse
-- Use the GUI or command line to upload recordings to Edge Impulse for training:
-```bash
-edge-impulse-uploader recordings/yourfile.wav
-```
+### DFT Analysis
+![DFT Screenshot](https://github.com/mauldevrinz/Sensor_Graphc_Visualization/blob/main/DFT_VISUALIZATION.png)
 
-### 5. Train the Model
-- Train a model on Edge Impulse using the uploaded data.
+## Future Enhancements
+1. Expand to include real-time data acquisition from physical sensors.
+2. Add more advanced filtering techniques (e.g., Bandpass, Kalman filters).
+3. Enable saving and exporting processed signals and analyses.
 
+## Contributors
+- Contributions are welcome! Feel free to submit a pull request or open an issue.
 
-## Project Structure
-```
-pyqt6-voice-ai/
-├── main.py              # PyQt6 GUI Application
-├── recorder.py          # Voice recording logic
-├── translator.py        # Translation logic
-├── database.py          # MySQL interaction
-├── edge_impulse.py      # Edge Impulse integration
-├── recordings/          # Saved audio files
-└── README.md            # Project documentation
-```
+---
 
-## Future Improvements
-- Add support for more languages in the translator.
-- Enhance the GUI for better user experience.
+This project is a practical tool for students and researchers in signal processing and instrumentation. Developed for educational purposes, it showcases fundamental techniques in signal generation, noise addition, filtering, and spectral analysis.
 
-## Contributions
-Feel free to fork this repository and submit pull requests. Suggestions and improvements are welcome!
-
-## License
-This project is licensed under the MIT License. See the `LICENSE` file for details.
