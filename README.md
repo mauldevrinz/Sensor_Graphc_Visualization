@@ -2,8 +2,6 @@
 
 This project demonstrates a Python-based tool for visualizing, filtering, and analyzing sensor signals using a custom GUI built with `customtkinter` and Matplotlib. The application provides dynamic noise addition, signal filtering, and Discrete Fourier Transform (DFT) analysis.
 
-![alt text](https://github.com/mauldevrinz/Sensor_Graphc_Visualization/blob/main/GUI_VISUALIZATION.png)
-
 ## Authors
 1. **Akhmad Maulvin Nazir Zakaria** (2042231028)
 2. **Dwi Oktavianto Wahyu Nugroho** (Supervisor)
