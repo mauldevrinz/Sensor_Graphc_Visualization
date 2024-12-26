@@ -1,4 +1,4 @@
-![alt text](https://github.com/mauldevrinz/Sensor_Graphic_Visualization/main/GUI.png)
+![alt text](https://github.com/mauldevrinz/Sensor_Graphc_Visualization/blob/main/GUI_VISUALIZATION.png)
 # Voice Recorder and Translator with AI Training for ESP32
 
 This project demonstrates how to build a PyQt6 application for voice recording and automatic translation.
