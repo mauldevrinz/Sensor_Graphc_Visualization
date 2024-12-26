@@ -63,9 +63,6 @@ python3 ctk.py
 ### Main GUI
 ![GUI Screenshot](https://github.com/mauldevrinz/Sensor_Graphc_Visualization/blob/main/GUI_VISUALIZATION.png)
 
-### DFT Analysis
-![DFT Screenshot](https://github.com/mauldevrinz/Sensor_Graphc_Visualization/blob/main/DFT_VISUALIZATION.png)
-
 ## Future Enhancements
 1. Expand to include real-time data acquisition from physical sensors.
 2. Add more advanced filtering techniques (e.g., Bandpass, Kalman filters).
